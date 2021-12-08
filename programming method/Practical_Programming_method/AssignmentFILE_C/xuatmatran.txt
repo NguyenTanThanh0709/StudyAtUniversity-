@@ -1,0 +1,6 @@
+
+max is 9
+
+min is 1
+
+dong max  2
