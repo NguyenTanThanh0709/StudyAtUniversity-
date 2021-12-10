@@ -23,6 +23,15 @@ bool CheckFiBo(int n){
     return false;
 }*/
 
+int TriangulaNumber(int n){
+    int Triangula = 0;
+    int i;
+    for(i = 1; i <= n; i++){
+        Triangula += i;
+    }
+    return Triangula;
+}
+
  int checkfibonacci(int n)
         {
             int a = 0;
@@ -92,7 +101,7 @@ float f_truong_hop_1(int d, int s, char *t){
 
 float f_truong_hop_2(int d, int s, char *t){
     float g_s;
-    int n;
+    int n, n1;
     int s_s = s%6;
     if(s_s == 0){
         g_s = s/2.0;
@@ -105,8 +114,9 @@ float f_truong_hop_2(int d, int s, char *t){
     }else if( s_s == 4){
         g_s = -s;
     }else if( s_s == 5){
-         n = s%5 +5;
-         g_s = n;
+         n = s%5 + 5;
+         n1 = TriangulaNumber(n);
+         g_s = n1*(-1);
     }
 
     char flood[] = "Flood";
