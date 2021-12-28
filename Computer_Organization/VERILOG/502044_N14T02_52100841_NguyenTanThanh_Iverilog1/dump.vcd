@@ -1,0 +1,41 @@
+$date
+	Mon Dec 27 09:54:50 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module notmoduledtb $end
+$var reg 1 ! clock $end
+$upscope $end
+$scope module notmoduledtb $end
+$var reg 1 " reset $end
+$upscope $end
+$scope module notmoduledtb $end
+$var wire 1 # Y [1:1] $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x#
+x"
+1!
+$end
+#5
+0!
+1"
+#10
+1!
+#15
+1#
+0!
+0"
+#16
+0#
+#17
+1#
+#20
+1!
+#22
