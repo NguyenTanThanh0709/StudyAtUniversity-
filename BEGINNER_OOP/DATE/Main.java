@@ -3,6 +3,6 @@ public class Main{
         Date date = new Date(31,12,2021);
         Date date1 = new Date(1,12,2021);
 
-        System.out.println(date.equals(date1));
+        System.out.println("hello");
     }
 }
