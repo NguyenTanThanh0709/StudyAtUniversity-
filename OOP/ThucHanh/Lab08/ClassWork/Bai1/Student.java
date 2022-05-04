@@ -1,5 +1,4 @@
-package ClassWork;
-
+package ClassWork.Bai1;
 
 public class Student extends Person{
     private int id;

@@ -1,4 +1,4 @@
-package ClassWork;
+package ClassWork.Bai1;
 
 public class Person{
     private String name;
