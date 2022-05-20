@@ -1,5 +1,5 @@
 public class VegetableFactory {
-    public Vegetable getVegetable(String type) {
+    public static Vegetable getVegetable(String type) {
         if (type.equals("Cabbage")) {
             return new Cabbage();
         } else if (type.equals("Pumpkin")) {
