@@ -194,31 +194,112 @@ public class StoreManagement {
     public double totalInQuarter(int quarter) {
         double total = 0;
         ArrayList<String> LISTinvoicesID = codeBillInQuarter(quarter);
-        // for (String string : LISTinvoicesID) {
-        //     System.out.println(string);
-        // }
+        System.out.println(LISTinvoicesID.size());
+        for (String string : LISTinvoicesID) {
+            System.out.println(string);
+        }
+
         total = getTotalPriceOfBill(LISTinvoicesID);
         return total;
     }
 
 
-    public ArrayList<ListMaNVANDMaHD> getListMaNVANDMaHDTrongThang(int month){
-        ArrayList<ListMaNVANDMaHD> result = new ArrayList<ListMaNVANDMaHD>();
-        for(Invoice INVOICE : invoices){
-            String[] informationDate = INVOICE.getDate().split("/");
-            int monthInvoices = Integer.parseInt(informationDate[1]);
-            if(monthInvoices == month){
-                ListMaNVANDMaHD nhanVien = new ListMaNVANDMaHD(INVOICE.getStaffID(), INVOICE.getInvoiceID());
-                result.add(nhanVien);
-            }
-        }
-        return result;
-    }
+    // public ArrayList<ListMaNVANDMaHD> getListMaNVANDMaHDTrongThang(int month){
+    //     ArrayList<ListMaNVANDMaHD> result = new ArrayList<ListMaNVANDMaHD>();
+    //     for(Invoice INVOICE : invoices){
+    //         String[] informationDate = INVOICE.getDate().split("/");
+    //         int monthInvoices = Integer.parseInt(informationDate[1]);
+    //         if(monthInvoices == month){
+    //             ListMaNVANDMaHD nhanVien = new ListMaNVANDMaHD(INVOICE.getStaffID(), INVOICE.getInvoiceID());
+    //             result.add(nhanVien);
+    //         }
+    //     }
+    //     return result;
+    // }
 
-    public ArrayList<String> getListNhanVienTrongThang(ArrayList<ListMaNVANDMaHD> getListMaNVANDMaHDTrongThang){
+    // public ArrayList<String> getListNhanVienTrongThang(ArrayList<ListMaNVANDMaHD> getListMaNVANDMaHDTrongThang){
+    //     ArrayList<String> NhanVien = new ArrayList<String>();
+    //     for(ListMaNVANDMaHD nhanVien: getListMaNVANDMaHDTrongThang){
+    //         NhanVien.add(nhanVien.getMaNV());
+    //     }
+
+    //     ArrayList<String> TEMP_NhanVien = new ArrayList<String>();
+    //     for(int i = 0; i < NhanVien.size(); i++){
+    //         if( !TEMP_NhanVien.contains(NhanVien.get(i))){
+    //             TEMP_NhanVien.add(NhanVien.get(i));
+    //         }
+    //     }
+    //     return TEMP_NhanVien;
+    // }
+
+    // public ArrayList<MaNVANDTienTrongThang> getMaNVANDTienTrongThang(ArrayList<ListMaNVANDMaHD> _listMaNVANDMaHD,ArrayList<String> listNhanVien){
+    //     ArrayList<MaNVANDTienTrongThang> result = new ArrayList<MaNVANDTienTrongThang>();
+
+    //     for (String nhanvien : listNhanVien) {
+    //         int TongTien = 0;
+    //         for (ListMaNVANDMaHD MANhanVien: _listMaNVANDMaHD) {
+    //             if(nhanvien.equals(MANhanVien.getMaNV())){
+    //                 String maHD = MANhanVien.getMaHD();
+    //                 for (InvoiceDetails invoice: invoiceDetails) {
+    //                     if(maHD.equals(invoice.getInvoiceID())){
+    //                         String drinkID = invoice.getDName();
+    //                         int soLuong = invoice.getAmount();
+    //                         for(Drink drink: drinks){
+    //                             if(drinkID.equals(drink.getdName())){
+    //                                 TongTien += drink.getPrice()*soLuong;
+    //                             }
+    //                         }
+    //                     }
+    //                 }
+
+    //             }
+    //         }
+    //         MaNVANDTienTrongThang nhanVien = new MaNVANDTienTrongThang(nhanvien, TongTien);
+    //         result.add(nhanVien);
+    //     }
+    //     return result;
+    // }
+
+    // public MaNVANDTienTrongThang TimMaxNhanVien(ArrayList<MaNVANDTienTrongThang> listMaNVANDTienTrongThang){
+    //     MaNVANDTienTrongThang maxObject = Collections.max(listMaNVANDTienTrongThang, new Comparator<MaNVANDTienTrongThang>() {
+    //         @Override
+    //         public int compare(MaNVANDTienTrongThang o1, MaNVANDTienTrongThang o2) {
+    //             if (o1.getTien() == o2.getTien()) {
+    //                 return 0;
+    //             } else if (o1.getTien() < o2.getTien()) {
+    //                 return -1;
+    //             } else if (o1.getTien() > o2.getTien()) {
+    //                 return 1;
+    //             }
+    //             return 0;
+    //         }
+    //     });
+    //     return maxObject;
+    // }
+
+    // public Staff MAXSTAFF(MaNVANDTienTrongThang maxObject){
+    //     Staff staff = null;
+    //     String MaNhanVien = maxObject.getMaNV();
+    //     for(Staff STAFF:staffs){
+    //         if(MaNhanVien.equals(STAFF.getsID())){
+    //             staff = STAFF;
+    //             break;
+    //         }
+    //     }
+    //     return staff;
+    // }
+    // requirement 5
+
+    public ArrayList<String> getListNhanVienTrongThang(int month){
         ArrayList<String> NhanVien = new ArrayList<String>();
-        for(ListMaNVANDMaHD nhanVien: getListMaNVANDMaHDTrongThang){
-            NhanVien.add(nhanVien.getMaNV());
+        for(Invoice nhanVien: invoices){
+            String DATE = nhanVien.getDate();
+            String[] inforDate = DATE.split("/");
+            int thang = Integer.parseInt(inforDate[1]);
+            if(thang == month){
+                NhanVien.add(nhanVien.getStaffID());
+            }
+
         }
 
         ArrayList<String> TEMP_NhanVien = new ArrayList<String>();
@@ -230,85 +311,93 @@ public class StoreManagement {
         return TEMP_NhanVien;
     }
 
-    public ArrayList<MaNVANDTienTrongThang> getMaNVANDTienTrongThang(ArrayList<ListMaNVANDMaHD> _listMaNVANDMaHD,ArrayList<String> listNhanVien){
-        ArrayList<MaNVANDTienTrongThang> result = new ArrayList<MaNVANDTienTrongThang>();
-
+    public HashMap<String, Integer> list_Money_Staff(ArrayList<String> listNhanVien, int month){
+        HashMap<String, Integer> result = new HashMap<String, Integer>();
         for (String nhanvien : listNhanVien) {
-            int TongTien = 0;
-            for (ListMaNVANDMaHD MANhanVien: _listMaNVANDMaHD) {
-                if(nhanvien.equals(MANhanVien.getMaNV())){
-                    String maHD = MANhanVien.getMaHD();
+            int money = 0;
+            for (Invoice IDStaff : invoices) {
+                String DATE = IDStaff.getDate();
+                String[] inforDate = DATE.split("/");
+                int thang = Integer.parseInt(inforDate[1]);
+                if(nhanvien.equals(IDStaff.getStaffID()) && thang == month){
+                    String maHD = IDStaff.getInvoiceID();
                     for (InvoiceDetails invoice: invoiceDetails) {
                         if(maHD.equals(invoice.getInvoiceID())){
                             String drinkID = invoice.getDName();
                             int soLuong = invoice.getAmount();
                             for(Drink drink: drinks){
                                 if(drinkID.equals(drink.getdName())){
-                                    TongTien += drink.getPrice()*soLuong;
+                                    money += drink.getPrice()*soLuong;
                                 }
                             }
                         }
                     }
-
                 }
             }
-            MaNVANDTienTrongThang nhanVien = new MaNVANDTienTrongThang(nhanvien, TongTien);
-            result.add(nhanVien);
+            result.put(nhanvien, money);
         }
         return result;
     }
 
-    public MaNVANDTienTrongThang TimMaxNhanVien(ArrayList<MaNVANDTienTrongThang> listMaNVANDTienTrongThang){
-        MaNVANDTienTrongThang maxObject = Collections.max(listMaNVANDTienTrongThang, new Comparator<MaNVANDTienTrongThang>() {
-            @Override
-            public int compare(MaNVANDTienTrongThang o1, MaNVANDTienTrongThang o2) {
-                if (o1.getTien() == o2.getTien()) {
-                    return 0;
-                } else if (o1.getTien() < o2.getTien()) {
-                    return -1;
-                } else if (o1.getTien() > o2.getTien()) {
-                    return 1;
-                }
-                return 0;
-            }
-        });
-        return maxObject;
-    }
-
-    public Staff MAXSTAFF(MaNVANDTienTrongThang maxObject){
-        Staff staff = null;
-        String MaNhanVien = maxObject.getMaNV();
-        for(Staff STAFF:staffs){
-            if(MaNhanVien.equals(STAFF.getsID())){
-                staff = STAFF;
+    public String MAXSTAFF(HashMap<String, Integer> list_Money_Staff){
+        String staff = "";
+        int max = Collections.max(list_Money_Staff.values());
+        for(String key: list_Money_Staff.keySet()){
+            if(list_Money_Staff.get(key) == max){
+                staff = key;
                 break;
             }
         }
         return staff;
     }
-    // requirement 5
+
     public Staff getStaffHighestBillInMonth(int month) {
         Staff maxStaff = null;
+        ArrayList<String> listNhanVien = getListNhanVienTrongThang(month);
+        for (String string : listNhanVien) {
+            System.out.println(string);
+        }
+
+        HashMap<String, Integer> list_Money_Staff = list_Money_Staff(listNhanVien, month);
+        for (String string : list_Money_Staff.keySet()) {
+            System.out.println(string + ": " + list_Money_Staff.get(string));
+        }
+
+        String staff = MAXSTAFF(list_Money_Staff);
+        System.out.println(staff);
+        for(Staff STAFF:staffs){
+            if(staff.equals(STAFF.getsID())){
+                maxStaff = STAFF;
+                break;
+            }
+        }
+        return maxStaff;
         //code here
-        ArrayList<ListMaNVANDMaHD> _listMaNVANDMaHD = getListMaNVANDMaHDTrongThang(month);
+        // ArrayList<ListMaNVANDMaHD> _listMaNVANDMaHD = getListMaNVANDMaHDTrongThang(month);
+        // System.out.println(_listMaNVANDMaHD.size());
+        // if(_listMaNVANDMaHD.size() == 0){
+        //     Staff _maxStaff = null;
+        //     return _maxStaff;
+        // }
         // for (ListMaNVANDMaHD listMaNVANDMaHD2 : _listMaNVANDMaHD) {
         //     System.out.println(listMaNVANDMaHD2.toString());
         // }
         // System.out.println("==========================================================");
-        ArrayList<String> listNhanVien = getListNhanVienTrongThang(_listMaNVANDMaHD);
+
+        // ArrayList<String> listNhanVien = getListNhanVienTrongThang(_listMaNVANDMaHD);
         // for (String string : listNhanVien) {
         //     System.out.println(string);
         // }
-        // System.out.println("==========================================================");
-        ArrayList<MaNVANDTienTrongThang> listMaNVANDTienTrongThang = getMaNVANDTienTrongThang(_listMaNVANDMaHD, listNhanVien);
-        // for (MaNVANDTienTrongThang maNVANDTienTrongThang : listMaNVANDTienTrongThang) {
-        //     System.out.println(maNVANDTienTrongThang.toString());
-        // }
+        //  System.out.println("==========================================================");
+        // ArrayList<MaNVANDTienTrongThang> listMaNVANDTienTrongThang = getMaNVANDTienTrongThang(_listMaNVANDMaHD, listNhanVien);
+        // // for (MaNVANDTienTrongThang maNVANDTienTrongThang : listMaNVANDTienTrongThang) {
+        // //     System.out.println(maNVANDTienTrongThang.toString());
+        // // }
 
-        MaNVANDTienTrongThang maxObject = TimMaxNhanVien(listMaNVANDTienTrongThang);
-        // System.out.println(maxObject.toString());
-        maxStaff = MAXSTAFF(maxObject);
-        return maxStaff;
+        // MaNVANDTienTrongThang maxObject = TimMaxNhanVien(listMaNVANDTienTrongThang);
+        // // System.out.println(maxObject.toString());
+        // maxStaff = MAXSTAFF(maxObject);
+        // return maxStaff;
     }
 
     // load file as list
@@ -374,43 +463,43 @@ public class StoreManagement {
     }
 }
 
-class ListMaNVANDMaHD{
-    String maNV;
-    String maHD;
-    public ListMaNVANDMaHD(String maNV, String maHD){
-        this.maNV = maNV;
-        this.maHD = maHD;
-    }
-    public String getMaNV(){
-        return this.maNV;
-    }
-    public String getMaHD(){
-        return this.maHD;
-    }
+// class ListMaNVANDMaHD{
+//     String maNV;
+//     String maHD;
+//     public ListMaNVANDMaHD(String maNV, String maHD){
+//         this.maNV = maNV;
+//         this.maHD = maHD;
+//     }
+//     public String getMaNV(){
+//         return this.maNV;
+//     }
+//     public String getMaHD(){
+//         return this.maHD;
+//     }
 
-    @Override
-    public String toString() {
-        return maHD + " " + maNV;
-    }
-}
+//     @Override
+//     public String toString() {
+//         return maHD + " " + maNV;
+//     }
+// }
 
-class MaNVANDTienTrongThang{
-    String maNV;
-    double tien;
-    public MaNVANDTienTrongThang(String maNV, double tien){
-        this.maNV = maNV;
-        this.tien = tien;
-    }
-    public String getMaNV(){
-        return this.maNV;
-    }
-    public double getTien(){
-        return this.tien;
-    }
+// class MaNVANDTienTrongThang{
+//     String maNV;
+//     double tien;
+//     public MaNVANDTienTrongThang(String maNV, double tien){
+//         this.maNV = maNV;
+//         this.tien = tien;
+//     }
+//     public String getMaNV(){
+//         return this.maNV;
+//     }
+//     public double getTien(){
+//         return this.tien;
+//     }
 
-    @Override
-    public String toString() {
-        return maNV + " " + tien;
-    }
-}
+//     @Override
+//     public String toString() {
+//         return maNV + " " + tien;
+//     }
+// }
 
