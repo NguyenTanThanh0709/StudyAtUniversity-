@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+    <div class="dongho">
+        <div class="title_dongho">
+            <h1 >Thời Gian Bây Giờ Là</h1>
+        </div>
+
+        <div class="titile__content">
+            <span class="title"> Ngày</span>
+            <span id = "Ngay" class="time__content"></span>
+            <span class="title"> Tháng</span>
+            <span id = "Thang" class="time__content"></span>
+            <span class="title"> Năm</span>
+            <span id = "Nam" class="time__content"></span>
+            <span class="title">Giờ</span>
+            <span id = "gio" class="time__content"></span>
+            <span class="title">Phút</span>
+            <span id = "Phut" class="time__content"></span>
+            <span class="title">Giây</span>
+            <span id = "Giay" class="time__content"></span>
+        </div>
+    </div>
+
+    <div class="donghoVuong">
+        <div class="title">Thời Gian Bây Giờ Là:</div>
+        <div class="content">
+            <div class="content__items">
+                <div class="item__title">
+                    Ngày
+                </div>
+                <div id = "Ngay1" class="item__content">
+
+                </div>
+            </div>
+            <div class="content__items">
+                <div class="item__title">
+                    Tháng
+                </div>
+                <div id = "Thang1" class="item__content">
+
+                </div>
+            </div>
+            <div class="content__items">
+                <div class="item__title">
+                    Năm
+                </div>
+                <div id = "Nam1" class="item__content">
+
+                </div>
+            </div>
+            <div class="content__items">
+                <div class="item__title">
+                    Giờ
+                </div>
+                <div id = "gio1" class="item__content">
+
+                </div>
+            </div>
+            <div class="content__items">
+                <div class="item__title">
+                    Phút
+                </div>
+                <div id = "Phut1" class="item__content">
+
+                </div>
+            </div>
+            <div class="content__items" style="background-color: rgb(164, 46, 46);">
+                <div class="item__title" >
+                    Giây
+                </div>
+                <div id = "Giay1" class="item__content" >
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="donghokim">
+
+        <div class="hourHand"></div>
+        <div class="minuteHand"></div>
+        <div class="secondHand"></div>
+        <div class="center"></div>
+    
+
+        <ul>
+            <li style="top:52px; right:109px;"><span>1</span></li>
+            <li style="top: 145px;
+            right: 36px;"><span>2</span></li>
+            <li style="    top: 243px;
+            right: 10px;"><span>3</span></li>
+            <li style="    top: 351px;
+            right: 40px;"><span>4</span></li>
+            <li style="top: 428px;
+            right: 102px;"><span>5</span></li>
+            <li style="bottom: 0px;
+            right: 235px;"><span>6</span></li>
+            <li style="bottom: 42px;
+            left: 109px;"><span>7</span></li>
+            <li style="bottom: 124px;
+            left: 33px;"><span>8</span></li>
+            <li style="    left: 5px;
+            bottom: 47%;"><span>9</span></li>
+            <li style="    top: 141px;
+            left: 27px;"><span>10</span></li>
+            <li style="top: 53px;
+            left: 95px;"><span>11</span></li>
+            <li style="top: 11px;
+            right: 235px;"><span>12</span></li>
+        </ul>
+    </div>
+
+    <script>
+
+            
+
+        function getTime(){
+            var date = new Date();
+
+            let day = document.getElementById("Ngay");
+            let month = document.getElementById("Thang");
+            let year = document.getElementById("Nam");
+            let hour = document.getElementById("gio");
+            let minute = document.getElementById("Phut");
+            let seconds = document.getElementById("Giay");
+
+            day.innerText = date.getDate();
+            month.innerText = date.getMonth() + 1;
+            year.innerText = date.getFullYear();
+            hour.innerText = date.getHours();
+            minute.innerText = date.getMinutes();
+            seconds.innerText = date.getSeconds();
+
+            $(document).ready(function(){
+
+                let value = date.getDate();
+                $("#Ngay1").text(value);
+                $("#Thang1").text(date.getMonth() + 1);
+                $("#Nam1").text(date.getFullYear());
+                $("#gio1").text(date.getHours());
+                $("#Phut1").text(date.getMinutes());
+                $("#Giay1").text(date.getSeconds());
+                                                        		
+            });
+
+        }
+
+        
+        
+
+
+        function anaclock(){
+            const now = new Date();
+            
+            const miliseconds = now.getMilliseconds();
+            const seconds = now.getSeconds();
+            const secondDegree = (seconds + (miliseconds/1000))/60*360+90;
+            second.style.transform = `rotate(${secondDegree})deg`;
+
+        }
+
+        // getTime();
+        // setInterval("getTime()",1000);
+
+        
+    </script>
+
+
+</body>
+</html>

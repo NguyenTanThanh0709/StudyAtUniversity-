@@ -1,0 +1,120 @@
+
+<<<<<<<<<< Mỗi quan hệ giữa các thực thể >>>>>>>>>>
+
+	Chi_Nhanh (1,n) ----------<chi_nhanh_thuoc_ngan_hang>---------- (1,1) Ngan_Hang
+
+	Chi_Nhanh (1,n) ----------<chi_nhanh_thuoc_thanh_pho>---------- (1,1) Thanh_Pho
+
+	May_ATM (1,n) ----------<chi_nhanh_quan_ly_ATM>---------- (1,1) Chi_Nhanh
+
+	Tai_Khoan (1,n) ----------<TaiKhoan_thuoc_NganHang>---------- (1,1) Ngan_Hang
+
+	The (1,1) ----------<The_thuoc_TaiKhoan>---------- (1,1) Tai_Khoan
+
+	Tai_Khoan (1,n) ----------<TaiKhoan_Thuoc_KhachHang>---------- (1,1) Khach_Hang
+
+	The_Gold  ----------<CHA_CON>----------  The
+
+	The_Sliver  ----------<CHA_CON>----------  The
+
+	The (1,n) ----------<the_thuc_hien_giaodich_o_ATM>---------- (1,n) May_ATM
+
+	Khach_Hang (1,n) ----------<KhachHang_co_ThanNhan>---------- (1,n) Than_Nhan
+
+	Chi_Nhanh ----------<DATRI__Chi_Nhanh_So_dien_thoai>---------- Chi_Nhanh
+
+	
+
+<<<<<<<<<< Danh sách bảng của các thực thể >>>>>>>>>>
+
+	Bảng  Ngan_Hang:
+			PK__ID_Ngan_Hang
+			Ten_ngan_hang
+			soLuongCN
+			Quoc_Gia
+
+
+	Bảng  Thanh_Pho:
+			PK__ID_thanh_pho
+			Ten_Thanh_Pho
+
+
+	Bảng  Chi_Nhanh:
+			PK__ID_Chi_Nhanh
+			Ten_Chi_Nhanh
+			FK__ID_Ngan_Hang   REFERENCES   Ngan_Hang
+			FK__ID_thanh_pho   REFERENCES   Thanh_Pho
+
+
+	Bảng  May_ATM:
+			PK__ID_ATM
+			Tinh_trang_hoat_dong
+			Noi_dat_cu_the
+			FK__ID_Chi_Nhanh   REFERENCES   Chi_Nhanh
+
+
+	Bảng  Tai_Khoan:
+			PK__ID_Tai_khoan
+			Ten_Tai_Khoan
+			ngay_lap_taiKhoan
+			FK__ID_Ngan_Hang   REFERENCES   Ngan_Hang
+			FK__ID_khach_hang   REFERENCES   Khach_Hang
+
+
+	Bảng  The:
+			PK__ID_the
+			Ngay_cap
+			FK__ID_Tai_khoan   REFERENCES   Tai_Khoan
+
+
+	Bảng  The_Gold:
+			do_uu_tien
+			Diem_thuong
+			loaithe
+			FK__PK__ID_the   REFERENCES   The
+
+
+	Bảng  The_Sliver:
+			level
+			gioi_han_giao_dich_trongNgay
+			Han_su_dung
+			phi_giao_dich
+			loaithe
+			FK__PK__ID_the   REFERENCES   The
+
+
+	Bảng  Khach_Hang:
+			PK__ID_khach_hang
+			First_name
+			Last_Name
+			NgaySinh
+			DiaChi
+			SoDienThoai
+
+
+	Bảng  the_thuc_hien_giaodich_o_ATM:
+			PK__ID_giao_dich
+			ngay_giaodich
+			sotien_giaodich
+			tong_tien_giaodich_trongngay
+			FK__PK__ID_ATM   REFERENCES   May_ATM
+			FK__PK__ID_the   REFERENCES   The
+
+
+	Bảng  DATRI__Chi_Nhanh_So_dien_thoai:
+			PK__So_dien_thoai
+			FK__PK__ID_Chi_Nhanh   REFERENCES   Chi_Nhanh
+
+
+	Bảng  Than_Nhan:
+			PK__SoDienThoai_thannhan
+			HoVaTen_thanNhan
+			MoiQuanHe_thanNhan
+			NgaySinh_thanNhan
+
+
+	Bảng  KhachHang_co_ThanNhan:
+			FK__PK__SoDienThoai_thannhan   REFERENCES   Than_Nhan
+			FK__PK__ID_khach_hang   REFERENCES   Khach_Hang
+
+

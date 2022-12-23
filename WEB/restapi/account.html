@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Danh sách account</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function get_accounts(){
+            $.ajax({
+                url: 'http://localhost:8081/bai10/services.php',
+                dataType: 'json',
+                type: "GET",
+                success: function (data) {
+                    data = 
+                    show_data(data);
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+        }
+        function show_data(data){
+            let tbody = $('#tbdata > tbody')
+            for(let i=0;i<data.length;i++){
+                let row = data[i]
+                let tr = `<tr><td>${row.id}</td><td>${row.email}</td><td>${row.hoten}</td><td>${row.gioitinh}</td><td>${row.ngaysinh}</td>
+                    <td>
+                        <form action="services.php" method="post">
+                            <input type="hidden" value="${row.id}" name="xoa">
+                            <input type="submit" value="delete" name="delete" class="btn btn-primary btn-sm">
+                        </form>
+                    </td>
+                    <td> 
+                        <button id="${row.id}" class="btn btn-primary btn-sm" onclick="Update(this)" data-toggle="modal" data-target="#new-dialog_forupdate">update</button>
+                    </td>
+                </tr>`
+                tbody.append(tr)
+            }
+        }
+        $(function(){
+            get_accounts()
+        })
+    </script>
+</head>
+
+<body>
+
+    
+
+    <div class="container">
+        <h1>Danh sách account</h1>
+        
+        <a href="#" data-toggle="modal" data-target="#new-dialog"><span class="btn btn-primary">Thêm account</span></a>
+        <table class="table table-striped" style="margin-top: 10px;" id="tbdata">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Họ tên</th>
+                    <th>Giới tính</th>
+                    <th>Ngày sinh</th>
+                    <th>Thao tác xóa</th>
+                    <th>Thao tác sửa</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+
+    <!-- New  dialog -->
+    <div class="modal fade" id="new-dialog">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        
+            <div class="modal-header">
+            <h4 class="modal-title">Tạo tập tin mới</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form class="modal-body" action = "services.php", method = 'post'>
+                <input class="form-control form-control-lg" type="text" placeholder="ID is number (Trùng id thì không thêm được)" name="id">
+                <input class="form-control" type="text" placeholder="Email" name="email">
+                <input class="form-control form-control-sm" type="text" placeholder="Your Name" name="name">
+                <input class="form-control" type="text" placeholder="gender" name="gender">
+                <input class="form-control form-control-sm" type="text" placeholder="Birthday" name="birthday">
+                <input type="submit" value="add" name="add" class="btn btn-primary">
+            </form>
+            
+            </div>
+        </div>
+        </div>
+
+        <!-- New  dialog for update -->
+    <div class="modal fade" id="new-dialog_forupdate">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        
+            <div class="modal-header">
+            <h4 class="modal-title">Chỉnh sửa những thông tin cần xóa</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form class="modal-body" action = "services.php", method = 'post'>
+                <input id="id_for_update" class="form-control form-control-lg" type="text" placeholder="ID is number (Trùng id thì không thêm được)" name="id">
+                <input id="email_for_update" class="form-control" type="text" placeholder="Email" name="email">
+                <input id="name_for_update" class="form-control form-control-sm" type="text" placeholder="Your Name" name="name">
+                <input id="gender_for_update" class="form-control" type="text" placeholder="gender" name="gender">
+                <input id="birthday_for_update" class="form-control form-control-sm" type="text" placeholder="Birthday" name="birthday">
+                <input  type="submit" value="update" name="update" class="btn btn-primary">
+            </form>
+            </div>
+        </div>
+        </div>
+
+
+
+        <script>
+            function Update(element){
+                let updateID = element.id;
+                // console.log(updateID);
+                $("#id_for_update").val(updateID);
+                let parent = $(element).parent();
+                let siblings = parent.siblings();
+                $("#email_for_update").val(siblings[1].innerText);
+                $("#name_for_update").val(siblings[2].innerText);
+                $("#gender_for_update").val(siblings[3].innerText);
+                $("#birthday_for_update").val(siblings[4].innerText);
+
+                // console.log(siblings[1].innerText);
+            }
+        </script>
+</body>
+
+</html>

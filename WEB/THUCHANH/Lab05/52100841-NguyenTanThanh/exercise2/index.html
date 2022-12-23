@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+
+      *{
+        margin: 0;
+        padding: 0;
+      }
+
+      .tail{
+          width: 600px;
+          height: 600px;
+
+          
+      }
+      .head{
+          width: 400px;
+          height: 400px;
+      }
+
+      .div1, .div2{
+        float: left;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+
+      .warpper{
+        display: flex;
+        justify-content: center;
+        align-self: start;
+        padding-top: 100px;
+        
+      }
+
+      .massange{
+        animation: fadeInDown 10s ease-out inherit;
+      }
+
+
+      @keyframes fadeInDown {
+
+      0% {
+          opacity: 1;
+
+          }
+
+      100% {
+              opacity: 0;
+          }
+      }
+
+        </style>
+</head>
+<body>
+    <div class="warpper">
+        <div class="head">
+          <div class="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      </div>
+      <div class="tail">
+          <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="cntt_01.gif" draggable="true" ondragstart="drag(event)" id="drag1" width="100%" style="transform: rotate(90deg);">
+          </div>
+          <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="cntt_02.gif" draggable="true" ondragstart="drag(event)" id="drag2" width="100%" style="transform: rotate(0deg);">
+          </div>
+          <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="cntt_03.gif" draggable="true" ondragstart="drag(event)" id="drag3" width="100%" style="transform: rotate(0deg);">
+          </div>
+          <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="cntt_04.gif" draggable="true" ondragstart="drag(event)" id="drag4" width="100%" style="transform: rotate(0deg);">
+          </div>
+          <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="cntt_05.gif" draggable="true" ondragstart="drag(event)" id="drag5" width="100%" style="transform: rotate(0deg);">
+          </div>
+          <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="cntt_06.gif" draggable="true" ondragstart="drag(event)" id="drag6" width="100%" style="transform: rotate(0deg);">
+          </div>
+          <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="cntt_07.gif" draggable="true" ondragstart="drag(event)" id="drag7" width="100%" style="transform: rotate(0deg);">
+          </div>
+          <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="cntt_08.gif" draggable="true" ondragstart="drag(event)" id="drag8" width="100%" style="transform: rotate(0deg);">
+          </div>
+          <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="cntt_09.gif" draggable="true" ondragstart="drag(event)" id="drag9" width="100%" style="transform: rotate(0deg);">
+          </div>
+          <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="cntt_10.gif" draggable="true" ondragstart="drag(event)" id="drag10" width="100%" style="transform: rotate(0deg);">
+          </div>
+      </div>
+      <div class="massange" style="    background-color: rgb(157 236 173);
+      width: 188px;
+      height: 80px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      color: rgb(27 118 13); display: none;">Congratulations! you have completed the puzzle game. And refresh or F5 to play again ^^ 
+      
+    </div>
+      
+
+    </div>
+
+
+    <script>
+        function allowDrop(ev) {
+          ev.preventDefault();
+        }
+        
+        function drag(ev) {
+          ev.dataTransfer.setData("text", ev.target.id);
+        }
+        
+        function drop(ev) {
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("text");
+          ev.target.appendChild(document.getElementById(data));
+        }
+
+        
+        
+        var checkcorrect = setInterval(function(){
+          var temp = $(".div2 img");
+          var check = true;
+          if(temp.length === 9 ){
+            
+              for(let i = 0; i < temp.length; i++){
+                let stringtemp = 'cntt_0' + String(i+1);
+                if(!(String(temp[i].src).includes(stringtemp))){
+                  check = false;
+                }
+              }
+              if( check === true){
+                var check1 = true;
+                  for(let i = 1; i <=9 ; i++){
+                    let stringtemp1 = 'drag' + String(i);
+                    if(getRotate(stringtemp1) !== 0 || getRotate(stringtemp1) % 360 !== 0){
+                      check1 = false;
+                      break;
+                    }
+                  }
+                  if(check1){
+                    $(".massange").css("display", "block");
+                    clearInterval(checkcorrect);
+                  }
+              }
+          }
+          console.log(1);
+        },500);
+
+        function getRotate(id){
+
+          var el = document.getElementById(id);
+            var st = window.getComputedStyle(el, null);
+            var tr = st.getPropertyValue("-webkit-transform") ||
+                    st.getPropertyValue("-moz-transform") ||
+                    st.getPropertyValue("-ms-transform") ||
+                    st.getPropertyValue("-o-transform") ||
+                    st.getPropertyValue("transform") ||
+                    "FAIL";
+
+            var values = tr.split('(')[1].split(')')[0].split(',');
+            var a = values[0];
+            var b = values[1];
+            var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+            return angle;
+        }
+
+        $(document).ready(function(){
+            var degrees = 0;
+            $('img').click(function rotateMe(e) {           
+                degrees += 90;
+                $(this).css({
+                'transform': 'rotate(' + degrees + 'deg)',
+                '-ms-transform': 'rotate(' + degrees + 'deg)',
+                '-moz-transform': 'rotate(' + degrees + 'deg)',
+                '-webkit-transform': 'rotate(' + degrees + 'deg)',
+                '-o-transform': 'rotate(' + degrees + 'deg)'
+                }); 
+              });
+
+              
+        });
+
+    </script>
+</body>
+</html>

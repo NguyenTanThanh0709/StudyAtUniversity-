@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .container{
+            padding-top: 50px;
+            position: relative;
+        }
+        .container::before{
+            content: "Job Application";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            font-size: 30px;
+            font-weight: 900;
+
+        }
+    </style>
+</head>
+<body>
+    <form class="container" method="post" action="form2.php">
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Your name" name="name">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+        </div>
+
+        <div class="mb-3">
+            <label for="desEXP" class="form-label">Describe your working experience</label>
+            <textarea class="form-control" id="desEXP" rows="3" name="desEXP"></textarea>
+        </div>
+
+        
+       <div>
+            <div class="name_woking mb-2">Vị trí ứng tuyển:</div>
+            <div class="form-check ">
+                <input class="form-check-input" type="radio" name="nameWorking" id="font-end" value="fe">
+                <label class="form-check-label" for="font-end">
+                Font-End
+                </label>
+            </div>
+            <div class="form-check ">
+                <input class="form-check-input" type="radio" name="nameWorking" id="back-end" value="be">
+                <label class="form-check-label" for="back-end">
+                Back-End
+                </label>
+            </div>
+            <div class="form-check ">
+                <input class="form-check-input" type="radio" name="nameWorking" id="full-stack" value="fs">
+                <label class="form-check-label" for="full-stack">
+                Full-Stack
+                </label>
+            </div>
+       </div>
+       <br>
+       <div>
+        <div class=" mb-2">Công nghệ bạn yêu thích:</div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="tech[]" value="react" id="react">
+                <label class="form-check-label" for="react">
+                    react
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="tech[]" value="vue" id="vue" >
+                <label class="form-check-label" for="vue">
+                    vue
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="tech[]" value="angular" id="angular" >
+                <label class="form-check-label" for="angular">
+                    angular
+                </label>
+            </div>
+       </div>
+       <br>
+       <div>
+        <div class=" mb-2">Nơi làm việc</div>
+        <select class="form-select" aria-label="Default select example" name="address">
+            <option disabled>bạn muốn làm việc ở đâu</option>
+            <option value="HCM">Hồ Chí Minh</option>
+            <option value="HN">Hà Nội</option>
+            <option value="DN">Đà Nẵng</option>
+          </select>
+       </div>
+       <br>
+
+       <div>
+        <div class=" mb-2">bạn làm việc được vào giờ nào</div>
+            <select class="form-select" size="3" multiple aria-label="multiple select example" name="hourworking[]">
+                <option value="Moring">Sáng</option>
+                <option value="Afternoon">Chiều</option>
+                <option value="Evening">Tối</option>
+            </select>
+       </div>
+       <br>
+       
+       <input type="submit" value="Submit" class="btn btn-primary">
+       
+    </form>
+</body>
+</html>

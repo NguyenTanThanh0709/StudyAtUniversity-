@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" style="width: 800px; margin: 0 auto;font-size: 20px; border: 1px solid black; text-align: center;">
+        <H2>Giải phương trình bậc 2</H2>
+        <div class="form__desc" style="margin:10px">
+            <label for="soA" class="title">
+                So A: 
+            </label>
+            <input id = "soA" type="text" class="text" value="1">
+        </div>
+        <div class="form__desc" style="margin:10px">
+            <label for="soB" class="title">
+                So B:
+            </label>
+            <input id = "soB" type="text" class="text" value="1">
+        </div>
+        
+        <div class="form__desc" style="margin:10px">
+            <label for="soC" class="title">
+                So C:
+             </label>
+             <input id = "soC" type="text" class="text" value="1">
+        </div>
+
+        <div class="form__desc" style="margin:10px">
+            <label for="ketqua">KQ:  </label>
+            <input style="width: 100%;" type="text" id = "ketqua"><br><br>
+            <input  type="button" value="giai" onclick="giaipt()">
+        </div>
+    </form>
+
+    <script>
+        
+        function giaipt(){
+            let a = document.getElementById("soA").value;
+            let b = document.getElementById("soB").value;
+            let c = document.getElementById("soC").value;
+            a = parseFloat(a);
+            b = parseFloat(b);
+            c = parseFloat(c);
+            
+            let x  = giaipt1(a,b,c);
+            document.getElementById("ketqua").value = x;
+        }
+
+        function giaipt1(a,b,c){
+            let denta = b*b -4*a*c;
+            if(denta < 0){
+                return "VN";
+            }else if(denta === 0){
+                return -b/2*a
+            }else{
+                let x1 = (-b- Math.sqrt(denta))/2*a;
+                let x2 = (-b+ Math.sqrt(denta))/2*a;
+                return "x1 = " + x1  + ", x2 = " + x2;
+            }
+        }
+    </script>
+</body>
+</html>

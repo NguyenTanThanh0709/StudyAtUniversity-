@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <div class="content">
+                
+                <label class = "Label" for="name">Your name:</label>
+                <input type="text" id="name" name="name" placeholder="enter your name" required>
+
+            </div>
+            <div class="content">
+                
+                <label class = "Label" for="address">Your address:</label>
+                <input type="email" id="address" name="address" placeholder="enter your email address" required>
+
+            </div>
+            <div class="content">
+                
+                <label class = "Label" for="date">Your birthday:</label>
+                <input type="date" id="date" name="date" required>
+
+            </div>
+            <div class="content">
+                
+                <label class = "Label" for="birthtime">Your birthtime:</label>
+                <input type="time" id="birthtime" name="birthtime" required>
+
+            </div>
+            <div class="content ">
+                
+                <label class = "Label" for="gender">Gender:</label>
+                <div class="content__gender">
+                    <input type="radio" id="gender" name="gender" ><span for="gender">Male</span>
+                    <input type="radio" id="gender" name="gender"><span  for="gender">Female</span>
+                </div>
+
+            </div>
+            <div class="content">
+                
+                <label class = "Label" for="country">Country:</label>
+                <select name="country" id="country" required>
+                    <option value="" disabled selected>select a contry</option>
+                    <option value="1">VN</option>
+                    <option value="2">HQ</option>
+                    <option value="3">UK</option>
+                    <option value="4">THAI</option>
+                    <option value="5">USA</option>
+                </select>
+
+            </div>
+            <div class="content" style="padding-top: 15px;">
+                
+                <label class = "Label" for="toiec">TOEIC:</label>
+                <input type="range" id="toiec" name="toiec" required> 
+
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Register" class="button__item button__item_color1 ">
+                <input type="reset" value="Reset" class="button__item button__item_color2">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

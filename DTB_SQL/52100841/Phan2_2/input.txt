@@ -1,0 +1,25 @@
+"Bang: "
+    "Ngan_Hang": [PK__ID_Ngan_Hang, Ten_ngan_hang, soLuongCN, Quoc_Gia]
+    "Thanh_Pho": [PK__ID_thanh_pho, Ten_Thanh_Pho, Quoc_Gia]
+    "Chi_Nhanh": [PK__ID_Chi_Nhanh, Ten_Chi_Nhanh, PK__ID_Ngan_Hang, PK__ID_thanh_pho]
+    "May_ATM": [PK__ID_ATM, Tinh_trang_hoat_dong, Noi_dat_cu_the, PK__ID_Chi_Nhanh]
+    "Tai_Khoan": [PK__ID_Tai_khoan, Ten_Tai_Khoan, ngay_lap_taiKhoan, PK__ID_khach_hang, PK__ID_Ngan_Hang]
+    "The": [PK__ID_the, Ngay_cap, PK__ID_Tai_khoan]
+    "the_thuc_hien_giaodich_o_ATM": [PK__ID_giao_dich, ngay_giaodich, sotien_giaodich, tong_tien_giaodich_trongngay, PK__ID_ATM, PK__ID_the]
+    "The_Gold": [PK__ID_the, do_uu_tien, Diem_thuong, loaiThe]
+    "DATRI__Chi_Nhanh_So_dien_thoai": [PK__ID_Chi_Nhanh, PK__So_dien_thoai_chiNhanh]
+    "The_Sliver": [PK__ID_the, level, gioi_han_giao_dich_trongNgay, Han_su_dung, phi_giao_dich, loaiThe]
+    "KhachHang_co_thanNhan": [PK__SoDienThoai_thannhan, PK__ID_khach_hang]
+    "Khach_Hang": [PK__ID_khach_hang, First_name, Last_Name, NgaySinh, DiaChi, SoDienThoai]
+    "Than_Nhan": [PK__SoDienThoai_thannhan, HoVaTen_thanNhan, MoiQuanHe_thanNhan, NgaySinh_thanNhan]
+"Cac ham phu thuoc: "
+    {(PK__ID_Ngan_Hang) => [Ten_ngan_hang, soLuongCN, Quoc_Gia]}
+    {(PK__ID_thanh_pho) => [Ten_Thanh_Pho, Quoc_Gia]}
+    {(PK__ID_Chi_Nhanh) => [PK__ID_Ngan_Hang, Ten_Chi_Nhanh, Ten_Thanh_Pho, PK__So_dien_thoai_chiNhanh, PK__ID_thanh_pho]}
+    {(PK__ID_khach_hang) => [First_name, Last_Name, SoDienThoai, NgaySinh, DiaChi]}
+    {(PK__ID_ATM) => [Ten_ngan_hang, Ten_Thanh_Pho, PK__ID_Chi_Nhanh, Noi_dat_cu_the, Tinh_trang_hoat_dong]}
+    {(PK__ID_Tai_khoan) => [Ten_Tai_Khoan, PK__ID_Ngan_Hang, PK__ID_khach_hang, ngay_lap_taiKhoan]}
+    {(PK__ID_giao_dich, PK__ID_ATM, PK__ID_the) => [sotien_giaodich, ngay_giaodich, tong_tien_giaodich_trongngay]}
+    {(PK__ID_the) => [phi_giao_dich, loaiThe, PK__ID_Tai_khoan, Ngay_cap, PK__ID_khach_hang, level, gioi_han_giao_dich_trongNgay, do_uu_tien, Diem_thuong, Han_su_dung]}
+    {(PK__ID_khach_hang, PK__SoDienThoai_thannhan) => [HoVaTen_thanNhan, MoiQuanHe_thanNhan, NgaySinh_thanNhan]}
+    {(PK__ID_khach_hang, PK__ID_Ngan_Hang) => [PK__ID_Tai_khoan]}

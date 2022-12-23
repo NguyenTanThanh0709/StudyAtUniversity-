@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        span {
+            display: inline-block;
+            padding-left: 10px;
+            font-size: 20px;
+            width: 17%;
+        }
+
+        input{
+            width: calc(100%-17%);
+        }
+
+        button{
+            width: 80px;
+            font-size: 18px;
+            margin-right: 10px;
+            transform: translateX(73px);
+        }
+
+        .content__name{
+            margin-left: 81px;
+            position: relative;
+        }
+
+        .content__name::before{
+            content: "Nhập Email";
+            position: absolute;
+            color: #fff;
+            background-color: blue;
+            font-weight: bold;
+            border-radius: 5px 10px 4px 8px;
+            padding: 5px;
+            top: -18px;
+            left: 11px;
+}
+
+.content__name::after{
+    background-image: url(https://png.pngtree.com/png-vector/20190129/ourlarge/pngtree-email-vector-icon-png-image_355828.jpg);
+    background-size: 30px 30px;
+    /* display: inline-block; */
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    content: "";
+    top: 5px;
+    right: 45px;
+            
+        }
+        
+    </style>
+</head>
+<body >
+    <div style="max-width:500px; margin:10px auto; border: 1px solid rgba(0,0,0,0.3); padding: 20px; border-radius: 5px;">
+        <form action="register.php" method="post">
+            <div style="margin-top: 10px;">
+                
+                <div class="content__name">
+                    <input class = "inputt" style="width:90%; padding: 10px; font-size:15px;" type="text" id="name" name="name" value="" placeholder="Email">
+                </div>
+                
+            </div>
+            <div style="margin-top: 6px;">
+                <label for="sex"><span >Sex:</span></label>
+                <input  type="radio"  name="sex" value="1"> Nam
+                <input  type="radio"  name="sex" value="0"> Nữ
+            </div>
+            <div style="margin-top: 10px;">
+                <label for="major" ><span >major:</span></label>
+                <select style="width:75%; padding: 10px; font-size:15px;" name="major" >
+                    <option disabled selected>--> Choose your major <--</option>
+                    <option value="001">CNTT</option>
+                    <option value="002">QTKD</option>
+                    <option value="003">NNA</option>
+                </select>
+            </div>
+            <div style="margin-top: 15px; text-align: center; width: 200px;">
+                <button>Clear</button>
+                <button>đăng kí</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

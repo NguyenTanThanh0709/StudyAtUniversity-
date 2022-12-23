@@ -1,0 +1,173 @@
+
+.dongho{
+    width: 460px;
+    height: 460px;
+    border: 5px solid rgba(0,0,0,0.4);
+    border-radius: 50%;
+    text-align: center;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgba(147, 62, 136, 0.4);
+    
+}
+
+.dongho .title_dongho{
+    position: absolute;
+    top: 60px;
+    
+}
+
+.dongho .titile__content{
+    position: absolute;
+    top: 225px;
+}
+
+.titile__content .title{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.titile__content .time__content{
+    font-size: 19px;
+} 
+
+
+.donghoVuong{
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #FFA17F;
+    background: -webkit-linear-gradient(to right, #00223E, #FFA17F);
+    background: linear-gradient(to right, #00223E, #FFA17F);
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+.donghoVuong .title{
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.donghoVuong .content{
+    margin: 20px 10px;
+    display: flex;
+    font-size: 35px;
+    justify-content:space-around;
+    margin-bottom: 20px;
+}
+
+.content .content__items{
+    background-color: rgb(17, 94, 99);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.content__items .item__title{
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.4)
+}
+
+.donghokim{
+    width: 500px;
+    height: 500px;
+    border: 5px solid black;
+    margin: 10px auto;
+    border-radius: 50%;
+    position: relative;
+    background-color: whitesmoke;
+    position: relative;
+    border: 5px solid #1a0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div ul{
+    list-style: none;
+    font-size: 20px;
+}
+
+div ul li{
+    position: absolute;
+}
+
+.center{
+    background-color: rgb(204, 19, 19);
+    position: absolute;
+    left: calc(50% - 10px);
+    top:  calc(50% - 10px);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 20;
+  }
+
+.hourHand{
+    width: 10px;
+    height: 150px;
+    position: absolute;
+    z-index: 10;
+    transform: rotate(150deg);
+    background: linear-gradient(rgba(0,0,0,0) 50%, rgb(0,0,0) 50%);
+    border-radius: 4px;
+    transform-origin:  center;
+    background-size: 50%;
+    /* animation: moveHours 43200s linear infinite; */
+}
+
+@keyframes moveHours{
+    0% {
+        transform: rotate(150deg);
+      }
+      100% {
+        transform: rotate(510deg);
+      }
+}
+
+.minuteHand{
+    width: 6px;
+    height: 250px;
+    position: absolute;
+    z-index: 10;
+    transform: rotate(350deg);
+    background: linear-gradient(rgba(0,0,0,0) 50%, rgb(0,0,0) 50%);
+    border-radius: 4px;
+    transform-origin:  center;
+    /* animation: moveMinutes 3600s linear infinite; */
+}
+
+@keyframes moveMinutes{
+    0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+}
+
+.secondHand{
+    width: 2px;
+    height: 350px;
+    position: absolute;
+    z-index: 10;
+    transform: rotate(360deg);
+    background: linear-gradient(rgba(0,0,0,0) 50%, rgb(0,0,0) 50%);
+    border-radius: 4px;
+    transform-origin:  center;
+    /* animation: moveSeconds 60s normal infinite steps(60,end); */
+}
+
+@keyframes moveSeconds{
+    0% {
+        transform: rotate(calc(180deg + 20deg));
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+}

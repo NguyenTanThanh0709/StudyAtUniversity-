@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cờ Online</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #canvas{
+            width: 60%;
+            display: block;
+            margin:  0 auto;
+        }
+
+        body{
+            background-color: #fff;
+        }
+
+        .btn{
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+        background-color: rgba(0,0,0,1);
+        }
+
+        .btn:hover{
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        .myAjax{
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+        <div></div>
+
+        <canvas id="canvas">okok</canvas>
+        
+    <script>
+        var myajax = $("div");
+        $(document).ready(function(){
+            $.get("test.txt", function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+            
+            myajax.html(data);
+            myajax.addClass("myAjax")
+            let title_el = document.querySelector("title");
+
+            if(title_el)
+            title_el.innerHTML = data;
+            });
+
+        }); 
+
+        var c, ctx;
+        var w = 200, h = 300;
+        window.onload = function(){
+            c = document.getElementById("canvas");
+            ctx = c.getContext("2d");
+            drawChessBoard(8);
+            drawFullChess(8);
+        }
+
+        function drawChessBoard(n){
+            var scale = w/n;
+            for(let i = 0 ; i < n; i++){
+                var c = i%2;
+                for(let j= 0; j < n; j++){
+                    c = 1-c;
+                    ctx.fillStyle = (c == 0 ? "#339900" : "#FFFF66");
+                    ctx.fillRect(scale*j, scale*i,scale-1,scale-1);
+                }
+            }
+        }
+
+        function drawChess(row, colums,src){
+            // var scale = w/n;
+            // var cx = (colums-0.5)*scale; cy = (row-0.5)*scale;
+            // ctx.strokeStyle = "red";
+            // ctx.lineWidth = "10";
+            let base_image = new Image();
+            base_image.src = src;
+            base_image.onload = function(){
+                ctx.drawImage(base_image,colums*25-25, row *25-25,base_image.width/1.8,base_image.height/1.8);
+            }
+            // ctx.arc(cx,cy,scale/2-10, Math.PI*2,true);
+            // ctx.stroke();
+        }
+
+        function drawFullChess(n){
+            for(let i = 1; i <= n; i++){
+                for(let j = 1; j <= n; j++){
+                    if(i == 1){
+                        if(j == 1 || j == 8){
+                            drawChess(i,j,'https://upload.wikimedia.org/wikipedia/commons/f/ff/Chess_rdt45.svg');
+                        }
+                        if(j == 2 || j == 7){
+                            drawChess(i,j,'https://upload.wikimedia.org/wikipedia/commons/e/ef/Chess_ndt45.svg');
+                        }
+                        if(j == 3 || j == 6){
+                            drawChess(i,j,'https://upload.wikimedia.org/wikipedia/commons/9/98/Chess_bdt45.svg');
+                        }
+
+                        if(j == 4){
+                            drawChess(i,j,'https://upload.wikimedia.org/wikipedia/commons/f/f0/Chess_kdt45.svg');
+                        }
+
+                        if( j == 5){
+                            drawChess(i,j,'https://upload.wikimedia.org/wikipedia/commons/4/47/Chess_qdt45.svg');
+                        }
+
+                    }else if( i == 2){
+                       drawChess(i,j,'https://upload.wikimedia.org/wikipedia/commons/c/c7/Chess_pdt45.svg');
+                    }
+
+                    if(i == 6){
+                        if(j == 1 || j == 8){
+                            drawChess(i,j,'https://upload.wikimedia.org/wikipedia/commons/7/72/Chess_rlt45.svg');
+                        }
+                        if(j == 2 || j == 7){
+                            drawChess(i,j,'https://upload.wikimedia.org/wikipedia/commons/7/70/Chess_nlt45.svg');
+                        }
+                        if(j == 3 || j == 6){
+                            drawChess(i,j,'https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg');
+                        }
+
+                        if(j == 4){
+                            drawChess(i,j,'https://upload.wikimedia.org/wikipedia/commons/4/42/Chess_klt45.svg');
+                        }
+
+                        if( j == 5){
+                            drawChess(i,j,'https://upload.wikimedia.org/wikipedia/commons/1/15/Chess_qlt45.svg');
+                        }
+
+                    }else if( i == 5){
+                       drawChess(i,j,'https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt45.svg');
+                    }
+                }
+            }
+
+        }
+
+        
+    </script>
+</body>
+</html>

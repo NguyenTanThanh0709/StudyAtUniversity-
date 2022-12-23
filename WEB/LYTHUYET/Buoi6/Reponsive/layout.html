@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <title>Document</title>
+
+  <style>
+    .footer__item{
+    text-align: center;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+ul{
+    list-style: none;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: auto;
+}
+
+.footer__item img{
+    width: 40px;
+}
+
+li img{
+    width: 60px;
+}
+
+.footer__item .title{
+    font-size: 22px;
+    font-weight: 900;
+    padding-bottom: 10px;
+}
+
+.footer__item div{
+    padding-bottom: 6px;
+}
+
+.footer__item p{
+    padding-bottom: 6px;
+
+}
+
+.content .title{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.link__social{
+  margin: 10px;
+  font-size: 30px;
+}
+
+.link__social:hover{
+  color: rgba(255, 255, 255, 0.4);
+}
+
+  </style>
+
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class=" col-xs-12 col-lg-12 col-md-6 col-xs-12 p-0">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                      <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                              </a>
+                              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                              </ul>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            </li>
+                          </ul>
+                          <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                          </form>
+                        </div>
+                        
+                      </div>
+                      
+                    </nav>
+                    
+      </div>
+      <div class="d-md-none d-none d-sm-none d-sx-none d-lg-block col-lg-4 order-md-1 col-md-6 subLink" style="background-color: rgba(0,0,0,0.029);">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6 order-md-0 order-lg-1 float-md-end" style="background-color: rgb(205, 155, 155);">
+        <div class="content text-center">
+          <div class="title p-2 ">ENGLISH IS THE BEST</div>
+          <div class="content__item p-2">partners all over the world are already training their staff in improving their English and professional skills: we provide them consultancy services to implement an effective training programme easy to manage and to monitor.</div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 d-sm-none d-md-block order-md-2 text-center   float-md-end " style="background-color: rgb(122, 57, 57);">partners all over the world are already training their staff in improving their English and professional skills: we provide them consultancy services to implement an effective training programme easy to manage and to monitor.</div>
+      <div class="col-12 order-md-4" style="background-color: rgb(67, 54, 115);">
+        <div class="container-fluid">
+          <div class="row p-5">
+            <div class="col-sm-6 col-lg-3">
+              <div class="footer__item">
+                <div class="title">Footer Content</div>
+                <div>The four vertical columns are in great options to add any information you want to your visitors to see again. The big and compelling register button can help you have more conversions from potential customers. </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="footer__item">
+                <div class="title">PRODUCT</div>
+                <div>MDBOOTRAP</div>
+                <div>MDWORDPRESS</div>
+                <div>BrandFlow</div>
+                <div>bootstrap Angular</div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="footer__item">
+                <div class="title">USEFULL LINKS</div>
+                <p>Your Account</p>
+                <p>Become an Afficate</p>
+                <p>Shipping Rates</p>
+                <p>Help</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="footer__item">
+                <div class="title">CONTACT</div>
+                <p>
+                  <i class="fa-regular fa-house-user"></i>
+                  <span>New York, NY 10012,US</span>
+                </p>
+                <p>
+                  <i class="fa-regular fa-envelope"></i>
+                  <span>info@gmail.com</span>
+                </p>
+                <p>
+                  <i class="fa-regular fa-phone"></i>
+                  <span>
+                    +01 0121 212 212
+                  </span>
+                </p>
+                <p>
+                  <i class="fa-regular fa-print"></i>
+                  <span>
+                  +01 0121 212 212
+                  </span>
+              </p>
+              </div>
+            </div>
+            <hr>
+            <div class="col-12 d-flex justify-content-between text-white">
+              <div class="itemm_last">@Copyright 2020 Copyright: MDBoopstap.com</div>
+              <div class="itemm_last">
+                <ul class="d-flex">
+                  <li class="link__social"><i class="fa-brands fa-facebook"></i></li>
+                  <li class="link__social"><i class="fa-brands fa-instagram"></i></li>
+                  <li class="link__social"><i class="fa-brands fa-twitter"></i></li>
+                  <li class="link__social"><i class="fa-brands fa-linkedin"></i></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</body>
+</html>

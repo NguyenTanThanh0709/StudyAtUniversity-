@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        table{
+            border-spacing: 2px;
+        }
+        table, th, td {
+          border: 1px solid black;
+        }
+        td, th{
+            padding: 5px;
+        }
+        div{
+            padding: 10px;
+            margin: 10px;
+            max-width: 1240px;
+        }
+        .lab{
+            background-color: #EBEB6B;
+        }
+        caption{
+            color: #7878D8;
+            font-size: 25px;
+            font-weight: 600;
+            padding-bottom: 10px;
+        }
+        .colorDay{
+            color: #7474C1;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div style=" width:100%; border:1px solid rgba(0,0,0,0.3); margin: 0 auto;">
+        <table style="width: 100%; border:1px solid black; text-align: center;">
+            <caption >STUDENT SCHEDULE</caption>
+            <tr>
+                <th class="colorDay">DAY/PREIOD</th>
+                <th>I</th>
+                <th>II</th>
+                <th rowspan="8" style="background-color: #77FC6D;">LUNCH</th>
+                <th>III</th>
+                <th>IV</th>
+            </tr>
+            <tr>
+                <td class="colorDay">MONDAY</td>
+                <td >MATH</td>
+                <td>PHYSICS</td>
+                
+                <td rowspan="2" colspan="2" style="background-color: #B3B3AF;"></td>
+                
+            </tr>
+            <tr>
+                <td class="colorDay">TUESDAY</td>
+                <td colspan="2" class="lab">LAB</td>
+                
+                
+                <!-- <td colspan="2"></td> -->
+                <!-- <td>OK4</td> -->
+            </tr>
+            <tr>
+                <td class="colorDay">WEDNESDAY</td>
+                <td>HISTORY</td>
+                <td>MUSIC</td>
+                
+                <td colspan="2">SEMINAR</td>
+                
+            </tr>
+            <tr><td class="colorDay">THURDAY</td>
+                <td>PHYSICAL EDUCATION</td>
+                <td>SWIMMING</td>
+                
+                <td>CHEMISTRY</td>
+                <td>BIOLOGY</td>
+            </tr>
+            <tr>
+                <td class="colorDay">FRIDAY</td>
+                <td colspan="2" class="lab">LAB</td>
+                <!-- <td>PHYSICS</td> -->
+                
+                <td>GEGRAPHY</td>
+                <td>INFORMATICS</td></tr>
+            <tr>
+                <td class="colorDay">SATURDAY</td>
+                <td>MATH</td>
+                <td>PHYSICS</td>
+                
+                <td colspan="2" class="lab">LAB</td>
+                
+            </tr>
+            <tr>
+                <td class="colorDay">SUNDAY</td>
+                <td colspan="2" style="background-color: #B3B3AF;"></td>
+                
+                
+                <td style="background-color: #B3B3AF;"></td>
+                <td>HOMEWORK</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

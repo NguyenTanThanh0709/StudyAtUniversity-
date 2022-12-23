@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a{
+            text-decoration: none;
+        }
+        .main{
+            border: 1px solid rgba(0,0,0,0.4);
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1240px;
+            padding: 10px;
+            
+            
+        }
+
+        .item{
+            margin-bottom: 10px;
+        }
+        .item_note{
+           padding-left: 248px;
+        }
+
+        span, a, label{
+            display: inline-block;
+            width: 20%;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        input{
+            display: inline-block;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form action="https://web-503073.herokuapp.com/lab01/login.php" method="post">
+            <div class="item">
+                <label  for="email">Email</label>
+                <input type="email" id="email" name="email" required>   
+            </div>
+            <div class="item">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>   
+            </div>
+            <div class="item">
+                <label for="Remember">Remember me</label>
+                <input type="checkbox" id="Remember" name="Remember" required>   
+            </div>
+            <div  class="item"><input style="width: 75px;
+                height: 25px; font-size: 17px;" type="submit" value="Login"></div>
+            <div class="item_note">
+                <div>
+                    <span style="width: 218px;">Not Registerd?</span><a href="#">Create an account</a>
+                </div>
+                <div>
+                    <span style="width: 218px;">For got your password?</span><a href="#">Click here to reset</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

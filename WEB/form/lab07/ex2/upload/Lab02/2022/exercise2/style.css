@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banner{
+    background-color: rgb(9, 9, 85);
+    display: table;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1240px;
+    background-color: aquamarine;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.banner img{
+    margin: 5px 10px;
+    width: 60%;
+    display: table-cell;
+    vertical-align: middle;
+    
+}
+
+.body h2{
+    text-align: center;
+    padding: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(170, 216, 53);
+}
+
+table{
+    width: 100%;
+    font-size: 22px;
+}
+
+table, th, td{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.item__color{
+    color: rgba(27, 62, 188,0.6);
+}
+
+.table__title{
+    
+    background-color: rgb(27, 62, 188);
+}
+
+.table__title2{
+    color: rgb(183, 61, 25);
+    background-color: rgba(27, 62, 188,0.6);
+}
+
+.item_time{
+    color: red;
+}

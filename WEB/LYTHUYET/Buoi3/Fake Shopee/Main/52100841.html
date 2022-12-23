@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="assest\style\style.css">
+    <link rel="stylesheet" href="assest\style\grid.css"> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Shopee Fake</title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav{
+    background-color: rgba(255,69,0,1);
+    color: #fff;
+    position: relative;
+}
+
+.nav__header{
+    display: flex;
+    position: relative;
+    height: 82px;
+}
+
+.search{
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px 5px;
+}
+
+.search__icon{
+    border-radius: 5px;
+    width: 35px;
+    margin:  0 5px;
+}
+
+.search__button{
+    background-color:rgba(255,69,0,1); 
+    color:aliceblue; 
+    border:none;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.nav__main{
+    max-width: 1200px;
+    margin: 0 auto;
+    /* background-color: aqua; */
+}
+
+.conect__list,
+.infor__list{
+    list-style: none;
+    display: flex;
+    font-size: 18px;
+    font-weight: 530    ;
+   
+}
+
+.header__connect{
+    position: absolute;
+    right: 0;
+}
+
+.connect__item,
+.infor__item{
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+ul{
+    list-style: none;
+}
+
+.item{
+    display: flex;
+}
+
+.listItem{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.search__item{
+    width: 840px;
+    height: 58px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.search__list{
+    float: right;
+}
+
+div.search__search{
+    padding-left: 40px;
+}
+
+.nav_search{
+    padding: 10px 0;
+    display: flex;
+    position: relative;
+    
+}
+.logo__shopee{
+    width: 206px;
+    height: 71px;
+    cursor: pointer;
+}
+
+.search__cart{
+    width: 140px;
+    height: 40px;
+    margin-left: 50px;
+    position: absolute;
+    
+}
+
+.btn{
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 17px;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: #0000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 17px;
+}
+
+.home__fillter{
+    padding-top: 10px;
+}
+
+.home__fillter_lable{
+    font-weight: bold;
+    font-size: 19px;
+    padding-right: 10px;
+}
+
+.cart{
+    background-image: rgba(255,69,0,1);
+    width: 70px;
+    width: 45%;
+    float: right;
+    position: absolute;
+    right: -830px;
+    top: -9px;
+    cursor: pointer;
+}
+
+.slide{
+    height: 300x;
+    margin: 10px 0;
+}
+
+.nav__main img{
+    border-radius: 5px;
+}
+
+.content___list{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.content___list__title{
+    font-size: 24px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.content__list__list{
+    margin: 30px;
+    font-size: 19px;
+}
+
+.content___list__item{
+     margin: 20px;
+    cursor: pointer;
+}
+
+.main__item__decoration{
+    word-wrap: break-word;
+}
+
+.main__image{
+    width: 100%;
+    border-radius: 6px;
+}
+
+.content__main__item{
+    margin-top: 15px;
+    overflow: hidden;
+    background-color: beige;
+    
+    padding: -5px !important;
+}
+
+.main__item__decoration{
+    font-size: 17px;
+    margin: 4px;
+}
+
+.main__item__name{
+    font-size: 20px;
+    font-weight: 550;
+    margin: 6px;
+}
+
+.content__main__item:hover{
+    box-shadow: 1px 2px 2px 2px rgba(0,0,0,0.2 );
+}
+
+.main__content__control{
+    background-color: antiquewhite;
+    height: 60px;
+    display: flex !important    ;
+    position: relative;
+    justify-content: space-between;
+}
+
+.control__button{
+    font-size: 17px;
+    padding: 10px;
+    border: none;
+}
+
+.content__control{
+    float: left;
+    text-align: center;
+    position: absolute;
+    
+}
+
+.control_dieukhiuen{
+    right: 5px;
+    position: absolute;
+    right: 0;
+}
+
+.dieukhien{
+    font-size: 20px;
+}
+
+.grid {
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+
+.l-3, .l-9, .l-12{
+    display: block;
+}
+
+.wide .l-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .wide .l-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .wide .l-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .wide .col {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .wide .row {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+
+    .wide1 .l-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+    .footer__item{
+    margin: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.footer__title{
+    margin-bottom: 10px;
+}
+
+.footer__contact{
+    width: 75px;
+    height: 75px;
+}
+
+.footer__item{
+    display: flex;
+}
+
+.footer__item :hover{
+    color: rgb(255,69,0);
+}
+
+.item__hover:hover{
+    color: rgb(255,69,0);
+}
+
+    
+    .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+
+    .grid.wide {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid.wide1{
+    max-width: 100%;
+    margin: 15px auto;
+}
+
+.Price__item{
+    font-size: 17px;
+    margin-left: 5px;
+    color: rgba(255,69,0,1);
+}
+
+.footer{
+    margin: 20px 0;
+    width: 100%;
+    height: 200px;
+    background-color: beige;
+    padding: 20px;
+}
+
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <!--nav -->
+        <div class="nav" >
+            <div class="nav__main">
+                <div class="nav__header">
+                    <div class="header__infor">
+                        <ul class="infor__list">
+                            <li class="infor__item">Kênh Người Bán</li>
+                            <li class="infor__item">Tải Ứng Dụng</li>
+                            <li class="infor__item">Kết Nối</li>
+                        </ul>
+                    </div>
+                    <div class="header__connect">
+                        <ul class="conect__list">
+                            <li class="connect__item">
+                                <!-- vertical-aliagn = midd.. can giua icon va chu -->
+                                Thông Báo
+                            </li>
+                            <li class="connect__item">
+                                Hỗ Trợ
+                            </li>
+                            <li class="connect__item">
+                                Tiếng Việt
+                            </li>
+                            <li class="connect__item">
+                                Đăng Nhập
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav_search">
+                    <div class="search__logo">
+                        <img class="logo__shopee" src="https://cdn.haitrieu.com/wp-content/uploads/2022/05/Logo-ShopeeXpress-H-Orange.png" alt="">
+                    </div>
+                    <div class="search__search">
+                        <div class="search__list">
+                            <div class="search">
+                                <input type="text" class="search__item" placeholder="enter item you want to find">
+                                <button class="search__button">
+                                <img class="search__icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4X_TyeICH5lQURWpZ6zQaNSCT-EKf_3DGNA&usqp=CAU" alt="">
+                                </button>
+                                <div class="search__cart">
+                                    <img style="width: 52%;" class="cart" src="https://www.iconlogovector.com/uploads/image/2022/01/shopee.png" alt="">
+                                </div>
+                            </div>
+                            
+                            <div class="list__item">
+                                <ul class="item">
+                                    <li class="listItem">giày dép</li>
+                                    <li class="listItem">giày dép</li>
+                                    <li class="listItem">giày dép</li>
+                                    <li class="listItem">giày dép</li>
+                                    <li class="listItem">giày dép</li>
+                                    <li class="listItem">giày dép</li>
+                                    <li class="listItem">giày dép</li>
+                                    <li class="listItem">giày dép</li>
+                                    <li class="listItem">giày dép</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!--slide -->
+        <div class="slide">
+            <div class="nav__main ">
+                <img style="width:100%; height: 280px;" src="https://www.kiotviet.vn/wp-content/uploads/2019/03/tong-hop-10-cach-ban-hang-tren-shopee-thuc-chien.png" alt="">
+            </div>
+        </div>
+        <!--content -->
+        <div class="content">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="content___list l-3" >
+                        <div class="container__item">
+                            <div class="content___list__title">Danh Mục Thức Ăn:</div>
+                            <ul class="content__list__list">
+                                <li class="content___list__item"> <span class= "item__hover"> Lẩu </span>   </li>
+                                <li class="content___list__item"> <span class= "item__hover"> May Tinh </span>  </li>
+                                <li class="content___list__item"> <span class= "item__hover"> May Tinh </span>  </li>
+                                <li class="content___list__item"> <span class= "item__hover"> Gà </span>    </li>
+                                <li class="content___list__item"> <span class= "item__hover"> May Tinh </span>  </li>
+                                <li class="content___list__item"> <span class= "item__hover"> Xốt Ướp </span>   </li>
+                            </ul>
+                        </div>
+                        <div class="container__item">
+                            <div class="content___list__title">Danh Mục Công Nghê:</div>
+                            <ul class="content__list__list">
+                                <li class="content___list__item"> <span class= "item__hover"> Máy Tính </span>  </li>
+                                <li class="content___list__item"> <span class= "item__hover"> Máy Tính </span>  </li>
+                                <li class="content___list__item"> <span class= "item__hover"> Điện Thoại </span>    </li>
+                                <li class="content___list__item"> <span class= "item__hover"> Máy Tính Bảng </span> </li>
+                                <li class="content___list__item"> <span class= "item__hover"> Máy Tính </span>  </li>
+                                <li class="content___list__item"> <span class= "item__hover"> Máy Tính </span>  </li>
+                            </ul>
+                        </div>
+                        <div class="container__item">
+                            <div class="content___list__title">Danh Mục Nhà Bếp:</div>
+                            <ul class="content__list__list">
+                                <li class="content___list__item"> <span class= "item__hover"> Bếp </span>   </li>
+                                <li class="content___list__item"> <span class= "item__hover"> Lò Vi Sóng </span>    </li>
+                                <li class="content___list__item"> <span class= "item__hover"> May Tinh </span>  </li>
+                                <li class="content___list__item"> <span class= "item__hover"> Máy Rửa Chén </span>  </li>
+                                <li class="content___list__item"> <span class= "item__hover"> May Tinh </span>  </li>
+                                <li class="content___list__item"> <span class= "item__hover"> May Tinh </span>  </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content__item l-9">
+                        <div class="grid main__content">
+                            <div class="row">
+                                <div class="main__content__control col l-12">
+                                    <div class="home__fillter">
+                                       <span class="home__fillter_lable">Tìm kiếm nhanh</span>
+                                       <button class="btn" style="background-color: #fff; color:black; font-weight: bold;">
+                                        Liên Quan
+                                       </button>
+                                       <button class="btn" style="background-color: rgba(255,69,0,1); color: #fff;; font-weight: bold;">
+                                        Mới Nhất
+                                       </button>
+                                       <button class="btn" style="background-color: #fff; color:black; font-weight: bold;">
+                                        Bán Chạy
+                                       </button>
+                                    
+                                    </div>
+                                </div>
+                                <div class="content__main__item col l-3">
+                                
+                                        <img src="https://cf.shopee.vn/file/9d79ed5c91c8094ea33b8af4d0a3539f" alt="" class="main__image">
+                                        <div class="main__item__decoration">These are short from classic sources like the Bible or Shakespeare</div>
+                                        <div class="main__item__name">Trà Sữa Chân Trâu</div>
+                                        <div class="Price__item">
+                                            1.200.000 VND
+                                        </div>
+                                        <button class="btn" style="background-color: rgba(255,69,0,1); color:black; margin:10px 35px">BUY</button>
+                                    
+                                </div>
+                                <div class="content__main__item col l-3">
+                                
+                                        <img src="https://cf.shopee.vn/file/9d79ed5c91c8094ea33b8af4d0a3539f" alt="" class="main__image">
+                                        <div class="main__item__decoration"> texts in English from classic sources like the Bible or Shakespeare</div>
+                                        <div class="main__item__name">Trà Sữa Chân Trâu</div>
+                                        <div class="Price__item">
+                                            1.200.000 VND
+                                        </div>
+                                        <button class="btn" style="background-color: rgba(255,69,0,1); color:black; margin:10px 35px">BUY</button>
+                                    
+                                </div>
+                                <div class="content__main__item col l-3">
+                                
+                                        <img src="https://cf.shopee.vn/file/9d79ed5c91c8094ea33b8af4d0a3539f" alt="" class="main__image">
+                                        <div class="main__item__decoration"> texts in English from classic sources like the Bible or Shakespeare</div>
+                                        <div class="main__item__name">Trà Sữa Chân Trâu</div>
+                                        <div class="Price__item">
+                                            1.200.000 VND
+                                        </div>
+                                        <button class="btn" style="background-color: rgba(255,69,0,1); color:black; margin:10px 35px">BUY</button>
+                                    
+                                </div>
+                                <div class="content__main__item col l-3">
+                                
+                                        <img src="https://cf.shopee.vn/file/9d79ed5c91c8094ea33b8af4d0a3539f" alt="" class="main__image">
+                                        <div class="main__item__decoration"> texts in English from classic sources like the Bible or Shakespeare</div>
+                                        <div class="main__item__name">Trà Sữa Chân Trâu</div>
+                                        <div class="Price__item">
+                                            1.200.000 VND
+                                        </div>
+                                        <button class="btn" style="background-color: rgba(255,69,0,1); color:black; margin:10px 35px">BUY</button>
+                                    
+                                </div>
+                                <div class="content__main__item col l-3">
+                                
+                                        <img src="https://cf.shopee.vn/file/9d79ed5c91c8094ea33b8af4d0a3539f" alt="" class="main__image">
+                                        <div class="main__item__decoration"> texts in English from classic sources like the Bible or Shakespeare</div>
+                                        <div class="main__item__name">Trà Sữa Chân Trâu</div>
+                                        <div class="Price__item">
+                                            1.200.000 VND
+                                        </div>
+                                        <button class="btn" style="background-color: rgba(255,69,0,1); color:black; margin:10px 35px">BUY</button>
+                                    
+                                </div>
+                                <div class="content__main__item col l-3">
+                                
+                                        <img src="https://cf.shopee.vn/file/9d79ed5c91c8094ea33b8af4d0a3539f" alt="" class="main__image">
+                                        <div class="main__item__decoration"> texts in English from classic sources like the Bible or Shakespeare</div>
+                                        <div class="main__item__name">Trà Sữa Chân Trâu</div>
+                                        <div class="Price__item">
+                                            1.200.000 VND
+                                        </div>
+                                        <button class="btn" style="background-color: rgba(255,69,0,1); color:black; margin:10px 35px">BUY</button>
+                                    
+                                </div>
+                                <div class="content__main__item col l-3">
+                                
+                                        <img src="https://cf.shopee.vn/file/9d79ed5c91c8094ea33b8af4d0a3539f" alt="" class="main__image">
+                                        <div class="main__item__decoration"> texts in English from classic sources like the Bible or Shakespeare</div>
+                                        <div class="main__item__name">Trà Sữa Chân Trâu</div>
+                                        <div class="Price__item">
+                                            1.200.000 VND
+                                        </div>
+                                        <button class="btn" style="background-color: rgba(255,69,0,1); color:black; margin:10px 35px">BUY</button>
+                                    
+                                </div>
+                                <div class="content__main__item col l-3">
+                                
+                                        <img src="https://cf.shopee.vn/file/9d79ed5c91c8094ea33b8af4d0a3539f" alt="" class="main__image">
+                                        <div class="main__item__decoration"> texts in English from classic sources like the Bible or Shakespeare</div>
+                                        <div class="main__item__name">Trà Sữa Chân Trâu</div>
+                                        <div class="Price__item">
+                                            1.200.000 VND
+                                        </div>
+                                        <button class="btn" style="background-color: rgba(255,69,0,1); color:black; margin:10px 35px">BUY</button>
+                                    
+                                </div>
+                                <div class="content__main__item col l-3">
+                                
+                                        <img src="https://cf.shopee.vn/file/9d79ed5c91c8094ea33b8af4d0a3539f" alt="" class="main__image">
+                                        <div class="main__item__decoration"> texts in English from classic sources like the Bible or Shakespeare</div>
+                                        <div class="main__item__name">Trà Sữa Chân Trâu</div>
+                                        <div class="Price__item">
+                                            1.200.000 VND
+                                        </div>
+                                        <button class="btn" style="background-color: rgba(255,69,0,1); color:black; margin:10px 35px">BUY</button>
+                                    
+                                </div>
+                                <div class="content__main__item col l-3">
+                                
+                                        <img src="https://cf.shopee.vn/file/9d79ed5c91c8094ea33b8af4d0a3539f" alt="" class="main__image">
+                                        <div class="main__item__decoration"> texts in English from classic sources like the Bible or Shakespeare</div>
+                                        <div class="main__item__name">Trà Sữa Chân Trâu</div>
+                                        <div class="Price__item">
+                                            1.200.000 VND
+                                        </div>
+                                        <button class="btn" style="background-color: rgba(255,69,0,1); color:black; margin:10px 35px">BUY</button>
+                                    
+                                </div>
+                                <div class="content__main__item col l-3">
+                                
+                                        <img src="https://cf.shopee.vn/file/9d79ed5c91c8094ea33b8af4d0a3539f" alt="" class="main__image">
+                                        <div class="main__item__decoration"> texts in English from classic sources like the Bible or Shakespeare</div>
+                                        <div class="main__item__name">Trà Sữa Chân Trâu</div>
+                                        <div class="Price__item">
+                                            1.200.000 VND
+                                        </div>
+                                        <button class="btn" style="background-color: rgba(255,69,0,1); color:black; margin:10px 35px">BUY</button>
+                                    
+                                </div>
+                                <div class="content__main__item col l-3">
+                                
+                                        <img src="https://cf.shopee.vn/file/9d79ed5c91c8094ea33b8af4d0a3539f" alt="" class="main__image">
+                                        <div class="main__item__decoration"> texts in English from classic sources like the Bible or Shakespeare</div>
+                                        <div class="main__item__name">Trà Sữa Chân Trâu</div>
+                                        <div class="Price__item">
+                                            1.200.000 VND
+                                        </div>
+                                        <button class="btn" style="background-color: rgba(255,69,0,1); color:black; margin:10px 35px">BUY</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--footer -->
+        <div class="footer grid wide1">
+            <div class="row">
+                <div class="footer__content col l-2-4 ">
+                    <h3 class="footer__title">
+                        Chăm sóc Khách Hàng
+                    </h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"> 
+                            <span class="item__hover">
+
+                         Trung tâm trợ giúp </span></li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Shopee Mall </span></li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Shopee Blog </span></li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Hướng dẫn m </span>ua hàng</li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Thanh toán </span></li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Shopee Blog </span></li>
+                    </ul>
+    
+             </div>
+                <div class="footer__content col l-2-4">
+                    <h3 class="footer__title">
+                        Về Shopee
+                    </h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Giới thiệu </span></li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Tuyển Dụng </span></li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Chính Sách  </span>Bảo Mất</li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Chính Sách  </span>Bảo Mất</li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Khám Phá </span></li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Chính Sách  </span>Bảo Mất</li>
+                </div>
+                <div class="footer__content col l-2-4">
+                    <h3 class="footer__title">
+                        Chăm sóc Khách Hàng
+                    </h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Liên Lạc </span></li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Gọi Điện</span></li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Shopee Blog </span></li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         SNhắn Tin </span></li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Tìm Hiểu </span></li>
+                        <li class="footer__item"> <span class="item__hover">
+
+                         Shopee Blog </span></li>
+                    </ul>
+                </div>
+                <div class="footer__content col l-2-4">
+                    <h3 class="footer__title">
+                        Tải ứng dụng shopee
+                    </h3>
+                    <ul class="footer__list">
+                        <li class="footer__item" style="width:70px; height:70px; margin-bottom: 10px;">
+                            <img src="https://www.imgonline.com.ua/examples/qr-code-url.png" alt="" class="footer__contact">
+
+                        </li>
+                       <div class="footer__item">
+
+                            <li class="">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLXl5gRR-eovUfti1Ja4Yd_figpIvPWNutBw&usqp=CAU" alt="" class="footer__contact">
+
+                            </li>
+                            <li class="">
+                                <img src="data:image/png;base64,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" alt="" class="footer__contact">
+
+                            </li>
+                       </div>
+              
+                    </ul>
+                </div>
+                <div class="footer__content col l-2-4">
+                    <h3 class="footer__title">
+                        Thông Tin Liên Lạc
+                    </h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <img style="width: 12%; vertical-align: middle; margin-left: 10px;"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/640px-Facebook_icon_2013.svg.png" alt="">
+                            <span>Facebook</span>
+                        </li>
+                        <li class="footer__item">
+                            <img style="width: 12%; vertical-align: middle; margin-left: 10px;"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="">
+                            <span>Instargram</span>
+                        </li>
+                        <li class="footer__item">
+                            <img style="width: 12%; vertical-align: middle; margin-left: 10px;" src="https://cdn1.iconfinder.com/data/icons/logos-brands-in-colors/2500/zalo-seeklogo.com-512.png" alt="">
+                            <span>zalo-seeklogo</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

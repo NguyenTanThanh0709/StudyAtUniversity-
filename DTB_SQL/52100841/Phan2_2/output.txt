@@ -1,0 +1,13 @@
+Bao Đóng tập thuộc tính X ( -- PK__ID_Chi_Nhanh) là: 
+	PK__So_dien_thoai_chiNhanh
+	PK__ID_thanh_pho
+	PK__ID_Ngan_Hang
+	PK__ID_Chi_Nhanh
+	Quoc_Gia
+	Ten_Chi_Nhanh
+	Ten_ngan_hang
+	Ten_Thanh_Pho
+	soLuongCN
+
+Lược đồ chỉ có một khóa duy nhất là: 
+	{PK__ID_giao_dich PK__ID_ATM PK__SoDienThoai_thannhan PK__ID_the }

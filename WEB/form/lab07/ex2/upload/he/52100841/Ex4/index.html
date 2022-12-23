@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Table</title>
+</head>
+<body>
+
+<style>
+    *{
+        box-sizing: border-box;
+    }
+
+    select{
+        float: left;
+    }
+    img{
+        float: left;
+    }
+</style>
+
+
+<select id="imageList" name="imageList" size="10">
+    <option value="pic_001.jpg" selected="selected">pic_001.jpg</option>
+    <option value="pic_002.jpg">pic_002.jpg</option>
+    <option value="pic_003.jpg">pic_003.jpg</option>
+    <option value="pic_004.jpg">pic_004.jpg</option>
+    <option value="pic_005.jpg">pic_005.jpg</option>
+    <option value="pic_006.jpg">pic_006.jpg</option>
+    <option value="pic_007.jpg">pic_007.jpg</option>
+    <option value="pic_008.jpg">pic_008.jpg</option>
+    <option value="pic_009.jpg">pic_009.jpg</option>
+    <option value="pic_010.jpg">pic_010.jpg</option>
+</select>
+<img src="pic_001.jpg" id = "img">
+
+<div class="" style="margin-left: 800px;">
+    <button type="button" id="back" >Back</button>
+    <button type="button" id="slideshow">Start slideshow</button>
+    <button  type="button" id="next">Next</button>
+    <p id="content">pic_001.jpg</p>
+</div>
+
+<script>
+
+    var formSelect = document.getElementById("imageList");
+    var imgChange = document.getElementById("img");
+    var content = document.getElementById("content");
+    var listIMG = document.querySelectorAll("option");
+
+    document.getElementById("imageList").addEventListener("change",function(){
+        for(let i = 0; i < listIMG.length; i++){
+            if(listIMG[i].value == formSelect.value ){
+                imgChange.src = formSelect.value;
+                content.innerText = formSelect.value + "   (" + (i+1) + "/"  + listIMG.length + ")";
+                break;
+            }
+        }
+        
+    });
+
+    document.getElementById("back").addEventListener("click", function(){
+        for(let i = 0; i < listIMG.length; i++){
+            if(listIMG[i].value == formSelect.value){
+                if(i == 0){
+                    imgChange.src = listIMG[listIMG.length-1].value;
+                    formSelect.value  = listIMG[listIMG.length-1].value;
+                    content.innerText = formSelect.value  + "   (" + (listIMG.length) + "/"  + listIMG.length + ")";
+                    break;
+                }else{
+                    imgChange.src = listIMG[i-1].value;
+                    formSelect.value  = listIMG[i-1].value;
+                    content.innerText = formSelect.value  + "   (" + (i) + "/"  + listIMG.length + ")";
+                    break;
+                }
+                
+                
+            }
+        }
+    });
+
+    document.getElementById("next").addEventListener("click", function(){
+        for(let i = 0; i < listIMG.length; i++){
+            if(listIMG[i].value == formSelect.value){
+                if(i == listIMG.length-1){
+                    imgChange.src = listIMG[0].value;
+                    formSelect.value  = listIMG[0].value;
+                    content.innerText = formSelect.value  + "   (" + (1) + "/"  + listIMG.length + ")";
+                    break;
+                }else{
+                    imgChange.src = listIMG[i+1].value;
+                    formSelect.value  = listIMG[i+1].value;
+                    content.innerText = formSelect.value  + "   (" + (i+1) + "/"  + listIMG.length + ")";
+                    break;
+                }
+                
+                
+            }
+        }
+    });
+
+    document.getElementById("slideshow").addEventListener("click",slideshow);
+    let counter = 0;
+    let myslide;
+    function slideshow(){
+        counter++;
+        if(counter % 2 != 0){
+                const delayContentChange = setTimeout(change,1000);
+            function change(){
+                document.getElementById("back").setAttribute('disabled', '');
+                document.getElementById("next").setAttribute('disabled', '');
+                document.getElementById("slideshow").innerText = "Stop slideshow";
+            }
+            let i ;
+            for(i = 0; i < listIMG.length;i++){
+                if(listIMG[i].value == formSelect.value){
+                    break;
+                }
+            }
+            myslide = setInterval(function() {
+
+                    imgChange.src = listIMG[i].value;
+                    formSelect.value = listIMG[i].value;
+                    content.innerText = formSelect.value  + "   (" + (i+1) + "/"  + listIMG.length + ")";
+                    if(i == (listIMG.length -1)){
+                        i = 0
+                    }else{
+                        i++;    
+                    }
+                    
+                }, 1000);
+        }else if(counter % 2 == 0){
+            document.getElementById("back").disabled = false;
+            document.getElementById("next").disabled = false;
+            document.getElementById("slideshow").innerText = "Start slideshow";
+            clearInterval(myslide);
+        }
+    }
+
+
+    
+</script>
+</body>
+</html>

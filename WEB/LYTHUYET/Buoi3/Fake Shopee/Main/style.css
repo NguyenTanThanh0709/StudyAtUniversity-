@@ -1,0 +1,26 @@
+.footer__item{
+    margin: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.footer__title{
+    margin-bottom: 10px;
+}
+
+.footer__contact{
+    width: 75px;
+    height: 75px;
+}
+
+.footer__item{
+    display: flex;
+}
+
+.footer__item :hover{
+    color: rgb(255,69,0);
+}
+
+.item__hover:hover{
+    color: rgb(255,69,0);
+}

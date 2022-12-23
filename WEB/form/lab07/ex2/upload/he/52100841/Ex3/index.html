@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<style>
+    .container{
+        max-width: 600px;
+        margin: auto;
+    }
+
+    checkbox{
+        margin-right: 10px;
+    }
+</style>
+
+
+<div class="container">
+    <br>
+    <br>
+    <p id="messange">Message will be here</p><br><br>
+
+    <div class="form-group">
+        <label for="message">Message:</label>
+        <input type="text" class="form-control" id="message" placeholder="Enter new message" name="message">
+    </div>
+    <div class="form-group">
+        <label for="color">Color:</label>
+        <select name="color" id="color">
+            <option value="1" selected="selected">Black</option>
+            <option value="2">Red</option>
+            <option value="3">Green</option>
+            <option value="4">Blue</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="bold">Bold:</label>
+        <input type="checkbox" name="bold" id="bold">
+        <label for="italic">Italic:</label>
+        <input type="checkbox" name="italic" id="italic">
+        <label for="underline">Underline:</label>
+        <input type="checkbox" name="underline" id="underline">
+    </div>
+
+    <button type="button" id="input">Show message</button>
+
+</div>
+
+<script>
+    var message = $("#messange");
+    var bold = $("#bold");
+    var italic = $("#italic");
+    var underline = $("#underline");
+    var inputMessage = $("#message");
+    var buttonAdd = $("#input");
+
+    $(document).ready(function(){
+
+        $("#color").change(function(){
+            if(this.value == "1"){
+                message.css("color","black");
+            }else if(this.value == "2"){
+                message.css("color","red");
+            }else if(this.value == "3"){
+                message.css("color","green");
+            }else if(this.value == "4"){
+                message.css("color","blue");
+            }
+        });
+
+        $("#bold").change(function(){
+            if($(this).prop('checked')){
+                message.css("font-weight", "bold");
+                check = true;
+            }else{
+                message.css("font-weight", "normal");
+            }
+        });
+
+        $("#italic").change(function(){
+            if($(this).prop('checked')){
+                message.css("font-style", "italic");
+            }else{
+                    message.css("font-style", "normal");
+                
+            }
+        });
+
+        $("#underline").change(function(){
+            if($(this).prop('checked')){
+                message.css("text-decoration", "underline");
+            }else{
+                message.css("text-decoration", "none");
+            }
+        });
+
+        $("#input").on("click",function(){
+            let messageChange = inputMessage.val();
+      
+            if(messageChange != ""){
+                message.text(messageChange);
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>

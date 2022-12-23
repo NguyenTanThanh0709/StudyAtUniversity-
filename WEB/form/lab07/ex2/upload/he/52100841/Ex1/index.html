@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<style>
+    form{
+        max-width: 400px;
+        margin: auto;
+    }
+
+    #error{
+        color: red;
+        padding: 10px;
+        font-size: 18px;
+    }
+</style>
+
+<div class="container">
+
+    <form action="/action_page.php" id="form">
+        <h2>Login</h2>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" onfocus="removeError()">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" onfocus="removeError()">
+        </div>
+        <div id="error"></div>
+        <button type="button" class="btn btn-default" onclick="check()">Submit</button>
+    </form>
+</div>
+
+<script>
+    var error = document.getElementById("error");
+    var form = document.getElementById("form");
+    
+    const validateEmail = (email) => {
+            return email.match(
+                /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+        };
+
+
+    function removeError(){
+        if(error.innerText.length > 0){
+            error.innerText = "";
+        }
+    }
+    
+    function check(){
+        let inputEmail = document.getElementById("email").value;
+        let inputPassWord = document.getElementById("pwd").value;
+        let check = true;
+        if(inputEmail == ""){
+            error.innerText = "please enter your email!";
+            check = false;
+        }else if(!validateEmail(inputEmail)){
+            error.innerText = "Your email is not correct!";
+            check = false;
+        }else if (inputPassWord == ""){
+            error.innerText = "please enter your password!";
+            check = false;
+        }else if(inputPassWord.length < 6){
+            error.innerText = "Your password must contain at least 6 characters!";
+            check = false;
+        }
+        if(check){
+            form.submit();
+        }
+    }
+</script>
+
+</body>
+</html>
